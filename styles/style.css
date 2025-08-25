@@ -1,0 +1,36 @@
+body {
+    overflow: hidden;
+}
+
+#mainApp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+#mainApp h1 {
+    color: #ff1c1c;
+    text-shadow: 2px 2px 0 #333;
+    margin-bottom: 20px;
+}
+
+#mainApp button {
+    padding: 12px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+}
+
+.info {
+    text-align: center;
+    padding: 20px;
+}
+
+#pokemonSprite {
+    width: 150px;
+    height: 150px;
+}

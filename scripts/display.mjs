@@ -11,5 +11,8 @@ export function displayPokemon(pokemonData) {
 
     document.getElementById('pokemonAbilities').textContent = `Abilities: ${pokemonData.abilities.map(a => a.ability.name).join(', ')}`;
 
-    document.getElementById('pokemonStats').textContent = `Stats: ${pokemonData.stats.map(s => `${s.stat.name}: ${s.base_stat}`).join(', ')}`
+    document.getElementById('pokemonStats').textContent = `Stats: ${pokemonData.stats.map(s => `${s.stat.name}: ${s.base_stat}`).join(', ')}`;
+
+    document.getElementById('pokemonSprite').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png`;
+    document.getElementById('pokemonSprite').alt = pokemonData.name;
 }

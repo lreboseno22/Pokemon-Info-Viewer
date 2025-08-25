@@ -1,11 +1,10 @@
-import { getTotalPokemon, getPokemonById, getRandomPokemonId } from "./api.mjs";
+import { getPokemonById, getRandomPokemonId } from "./api.mjs";
 import { displayPokemon } from "./display.mjs";
 
 document.getElementById('fetchPokemon').addEventListener('click', async () => {
     try {
-        const total = await getTotalPokemon();
-        const randomId = getRandomPokemonId(total);
-        const pokemonData = await getPokemonById(randomId)
+        const randomId = getRandomPokemonId();
+        const pokemonData = await getPokemonById(randomId) // 1-898
 
         displayPokemon(pokemonData);
     } catch (err){

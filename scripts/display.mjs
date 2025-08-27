@@ -7,7 +7,9 @@ export function capitalize(name) {
 export function displayPokemon(pokemonData) {
     document.getElementById('pokemonName').textContent = capitalize(pokemonData.name);
 
-    document.getElementById('pokemonTypes').textContent = `Type(s): ${pokemonData.types.map(t => t.type.name).join(', ')}`;
+    // make type badges for styling
+    const typesHtml = pokemonData.types.map( t=> `<span class="type type-${t.type.name}">${t.type.name}</span>`).join(" ");
+    document.getElementById('pokemonTypes').innerHTML = `<strong>Type(s):</strong> ${typesHtml}`;
 
     document.getElementById('pokemonAbilities').textContent = `Abilities: ${pokemonData.abilities.map(a => a.ability.name).join(', ')}`;
 

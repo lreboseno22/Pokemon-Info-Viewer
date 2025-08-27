@@ -11,7 +11,9 @@ export function displayPokemon(pokemonData) {
     const typesHtml = pokemonData.types.map( t=> `<span class="type type-${t.type.name}">${t.type.name}</span>`).join(" ");
     document.getElementById('pokemonTypes').innerHTML = `<strong>Type(s):</strong> ${typesHtml}`;
 
-    document.getElementById('pokemonAbilities').textContent = `Abilities: ${pokemonData.abilities.map(a => a.ability.name).join(', ')}`;
+    // style ablitites
+    const abilitiesHtml = pokemonData.abilities.map( a => `<span class="ability">${a.ability.name}</span>`).join(" ");
+    document.getElementById('pokemonAbilities').innerHTML = `<strong>Abilities:</strong> ${abilitiesHtml}`;
 
     document.getElementById('pokemonStats').textContent = `Stats: ${pokemonData.stats.map(s => `${s.stat.name}: ${s.base_stat}`).join(', ')}`;
 

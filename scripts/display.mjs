@@ -22,5 +22,9 @@ export function displayPokemon(pokemonData) {
     document.getElementById('pokemonSprite').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png`;
     document.getElementById('pokemonSprite').alt = pokemonData.name;
 
-    // play pokemon sound
+    // play pokemon sound yayay
+    const cry = document.getElementById('pokemonCry');
+    cry.volume = 0.1;
+    cry.src = `https://play.pokemonshowdown.com/audio/cries/${pokemonData.name.toLowerCase()}.mp3`;
+    cry.play().catch(err => console.log("Cry not available:", err))
 }

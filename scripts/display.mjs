@@ -15,8 +15,12 @@ export function displayPokemon(pokemonData) {
     const abilitiesHtml = pokemonData.abilities.map( a => `<span class="ability">${a.ability.name}</span>`).join(" ");
     document.getElementById('pokemonAbilities').innerHTML = `<strong>Abilities:</strong> ${abilitiesHtml}`;
 
-    document.getElementById('pokemonStats').textContent = `Stats: ${pokemonData.stats.map(s => `${s.stat.name}: ${s.base_stat}`).join(', ')}`;
+    // better style stats
+    const statsHtml = pokemonData.stats.map( s => `<div class="stat"> <span class="stat-name">${capitalize(s.stat.name)}</span> <span class="stat-value">${s.base_stat}</span> </div>`).join("");
+    document.getElementById('pokemonStats').innerHTML = `<div class="stats-label">Stats:</div> <div class="stats-list">${statsHtml}</div>`;
 
     document.getElementById('pokemonSprite').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png`;
     document.getElementById('pokemonSprite').alt = pokemonData.name;
+
+    // play pokemon sound
 }

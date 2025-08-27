@@ -19,6 +19,7 @@ body {
 }
 
 #mainApp button {
+    margin: 1rem;
     padding: 12px 12px;
     font-size: 16px;
     cursor: pointer;
@@ -28,6 +29,26 @@ body {
 
 #mainApp button:hover {
     background-color: #ffbb00;
+}
+
+#fetchContainer {
+    display: flex;
+}
+
+input {
+    width: 250px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    color: black;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #ff3c3c;
+    outline: none;
+    box-shadow: 0 0 5px #ff3c3c66;
 }
 
 .info {

@@ -10,3 +10,10 @@ export async function getPokemonById(id){
 export function getRandomPokemonId(){
     return Math.floor(Math.random() * 898) + 1; // some pokemon in the pokemon api dont have sprites in the poke sprites api so we keep it at this number to ensure all pokemons get fetched with a sprite
 }
+
+// Fetch Pokemon by name
+export async function getPokemonByName(input) {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${input}`);
+    if(!response.ok)  throw new Error('Failed to fetch Pokemon data');
+    return await response.json();
+}

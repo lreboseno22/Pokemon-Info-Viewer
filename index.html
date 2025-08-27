@@ -10,7 +10,16 @@
 <body>
     <div id="mainApp">
         <h1> Pokemeon Info Viewer</h1>
-        <button id="fetchPokemon">Fetch Pokemon</button>
+
+        <div id="fetchContainer">
+            <form id="searchContainer">
+                <input type="text" id="pokemonSearch" placeholder="Enter Pokemon name" required/>
+                <button id="searchPokemon" >Search</button>
+            </form>
+
+            <button id="fetchPokemon">Get Random Pokemon</button>
+        </div>
+        
         
         <div class="info" id="pokemonInfo">
             <img id="pokemonSprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Pokemon Sprite"/>
@@ -21,6 +30,6 @@
         </div>  
     </div>
 
-    <audio id="pokemonCry" controls preload="auto"></audio>
+    <audio id="pokemonCry" preload="auto"></audio>
 </body>
 </html>
